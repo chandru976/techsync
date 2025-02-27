@@ -1,0 +1,46 @@
+@{
+    ViewData["Title"] = "Student Dashboard";
+}
+
+<h2>Student Dashboard</h2>
+<p>Welcome to the Student Dashboard!</p>
+
+<div class="row">
+    <!-- Marks Overview -->
+    <div class="col-md-6">
+        <h4>Your Marks</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Test Type</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var mark in ViewBag.Marks)
+                {
+                    <tr>
+                        <td>@mark.Subject.Name</td>
+                        <td>@mark.TestType</td>
+                        <td>@mark.Score</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Feedback Status -->
+    <div class="col-md-6">
+        <h4>Recent Feedback</h4>
+        <ul class="list-group">
+            @foreach (var fb in ViewBag.Feedback)
+            {
+                <li class="list-group-item d-flex justify-content-between">
+                    @fb.Message.Substring(0, Math.Min(30, fb.Message.Length))...
+                    <span class="badge bg-@(fb.Status == "Pending" ? "warning" : "success")">@fb.Status</span>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

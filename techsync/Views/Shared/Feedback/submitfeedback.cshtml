@@ -1,0 +1,14 @@
+@model Feedback
+@{
+    ViewData["Title"] = "Submit Feedback";
+}
+
+<h2>Submit Feedback</h2>
+
+<form asp-action="SubmitFeedback" method="post">
+    <div>
+        <label>Feedback</label>
+        <textarea name="feedback"></textarea>
+    </div>
+    <button type="submit">Submit</button>
+</form>

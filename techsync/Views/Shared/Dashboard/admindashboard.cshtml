@@ -1,0 +1,41 @@
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h2>Admin Dashboard</h2>
+<p>Welcome to the Admin Dashboard!</p>
+
+<div class="row">
+    <!-- Users Card -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-header bg-primary text-white">Users</div>
+            <div class="card-body">
+                <h5 class="card-title">@ViewBag.Users.Count Registered Users</h5>
+                <a href="@Url.Action("Index", "Users")" class="btn btn-secondary">Manage Users</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Subjects Card -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-header bg-success text-white">Subjects</div>
+            <div class="card-body">
+                <h5 class="card-title">@ViewBag.Subjects.Count Subjects</h5>
+                <a href="@Url.Action("Index", "Subjects")" class="btn btn-secondary">Manage Subjects</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Courses Card -->
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-header bg-info text-white">Courses</div>
+            <div class="card-body">
+                <h5 class="card-title">@ViewBag.Courses.Count Courses</h5>
+                <a href="@Url.Action("Index", "Courses")" class="btn btn-secondary">Manage Courses</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Staff Dashboard";
+}
+
+<h2>Staff Dashboard</h2>
+<p>Welcome to the Staff Dashboard!</p>
+
+<div class="row">
+    <!-- Assigned Subjects -->
+    <div class="col-md-6">
+        <h4>Your Subjects</h4>
+        <ul class="list-group">
+            @foreach (var subject in ViewBag.Subjects)
+            {
+                <li class="list-group-item">@subject.Name (@subject.Class)</li>
+            }
+        </ul>
+    </div>
+    
+    <!-- Recent Marks -->
+    <div class="col-md-6">
+        <h4>Recently Entered Marks</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Subject</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var mark in ViewBag.RecentMarks)
+                {
+                    <tr>
+                        <td>@mark.Student.Name</td>
+                        <td>@mark.Subject.Name</td>
+                        <td>@mark.Score</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

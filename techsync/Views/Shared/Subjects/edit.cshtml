@@ -1,0 +1,19 @@
+@model Subject
+@{
+    ViewData["Title"] = "Edit Subject";
+}
+
+<h2>Edit Subject</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="SubjectID" />
+    <div class="form-group">
+        <label>Assigned Staff</label>
+        <select asp-for="AssignedStaffID" class="form-control" asp-items="ViewBag.Staff"></select>
+    </div>
+    <div>
+        <label>Subject Name</label>
+        <input name="subjectName" />
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

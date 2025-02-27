@@ -1,0 +1,26 @@
+@model Marks
+@{
+    ViewData["Title"] = "Enter Marks";
+}
+
+<h2>Enter Marks</h2>
+
+<form asp-action="EnterMarks" method="post">
+    <div class="form-group">
+        <label>Student</label>
+        <select asp-for="StudentID" class="form-control" asp-items="ViewBag.Students"></select>
+    </div>
+    <div class="form-group">
+        <label>Subject</label>
+        <select asp-for="SubjectID" class="form-control" asp-items="ViewBag.Subjects"></select>
+    </div>
+    <div class="form-group">
+        <label>Test Type</label>
+        <input asp-for="TestType" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Score</label>
+        <input asp-for="Score" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
